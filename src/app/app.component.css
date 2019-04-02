@@ -1,0 +1,74 @@
+.onborading-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }  
+   
+  h1.onborading-app-name {
+    margin-left: 14px;
+  }
+  
+  .onborading-sidenav-container {
+    /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+    flex: 1;
+  }
+
+  .onborading-card
+  {
+    height:600px;
+  }
+
+  .mat-icon
+  {
+    width:24px;
+  }
+
+.side-nav{
+  margin-top:20px;
+  border-radius: 4px;
+}
+
+.menu-text
+{
+  margin-left:10px;
+  margin-top:3px;
+}
+
+.mat-nav-list a.active-link {
+  background:lightgray;
+}
+
+.employee-card
+{
+    min-height:500px;
+}
+
+.page-container
+{   
+    padding:20px;    
+}
+
+.margin-left70
+{
+margin-left:70%;
+}
+
+ 
+.mat-form-field{
+  width:100px !important;
+  font-size: 14px !important;
+  margin-top:15px !important;
+} 
+
+.mat-drawer-content
+{
+  overflow: hidden;
+}
+ 
+ 
+  

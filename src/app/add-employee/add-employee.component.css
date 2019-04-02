@@ -1,0 +1,9 @@
+
+.add-employee-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dd-employee-container > * {
+    width: 100%;
+  }
