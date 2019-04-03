@@ -3,10 +3,11 @@
         <span>Employee Registration</span></mat-toolbar>
         <mat-card class="my-card">
 <mat-card-content>
-        <form class="my-form">
+        <form class="my-form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
         <mat-form-field class="full-width" color={{env.themeColor}}>
                 <mat-label>Hiring Manager</mat-label>
-                <input  matInput  placeholder="Hiring Manager"  name="hmanager"  required>
+                <input  matInput  placeholder="Hiring Manager"  name="hmanager"  id="hname" required>
+                <mat-hint align="end">Not more then 60 characters long.</mat-hint>
                 </mat-form-field>
                 <mat-form-field class="full-width" color={{env.themeColor}}>
                 <mat-label>Supplier manager</mat-label>
@@ -39,14 +40,27 @@
                                         <input  matInput  placeholder="State" name="sstate">
                                 </mat-form-field>
                                 <mat-form-field class="full-width" color={{env.themeColor}}>
-                                                <mat-label>Contractor Role</mat-label>
-                                                <input  matInput  placeholder="Contractor Role" name="crole">
-                                        </mat-form-field>
+                                        <mat-label>Contractor Role</mat-label>
+                                        <input  matInput  placeholder="Contractor Role" name="crole">
+                                </mat-form-field>
 
-                                        <mat-form-field class="full-width" color={{env.themeColor}}>
-                                                        <mat-label>TCS Employee ID# / SSN# ( Last 4 Digit)</mat-label>
-                                                        <input  matInput  placeholder="TCS Employee ID# / SSN# ( Last 4 Digit)" name="tcsid">
-                                                </mat-form-field>
+                                <mat-form-field class="full-width" color={{env.themeColor}}>
+                                        <mat-label>TCS Employee ID# / SSN# ( Last 4 Digit)</mat-label>
+                                        <input  matInput  placeholder="TCS Employee ID# / SSN# ( Last 4 Digit)" name="tcsid">
+                                </mat-form-field>
+                                
+                                <mat-form-field class="full-width" color={{env.themeColor}}>
+                                        <mat-label>Level of Job</mat-label>
+                                        <mat-select [(value)]="selected">
+                                        <select matNativeControl required>
+                                                <option value="L1">L1</option>
+                                                <option value="L2">L2</option>
+                                                <option value="L3">L3</option>
+                                                <option value="L4">L4</option>
+                                              </select>
+
+                                        </mat-select>
+                                </mat-form-field>
                                 
                         </form>
                       </mat-card-content>
