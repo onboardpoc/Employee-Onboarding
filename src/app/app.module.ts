@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
+import { HttpClientModule } from '@angular/common/http';
 
 import {
   MatAutocompleteModule,
@@ -58,6 +58,7 @@ import { RouterModule, ROUTES} from '@angular/router';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatAutocompleteModule,
