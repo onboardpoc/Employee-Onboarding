@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment';
+import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
 
 @Component({
   selector: 'app-add-employee',
@@ -12,5 +13,8 @@ export class AddEmployeeComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onSubmit() {
+    alert('SUCCESS!! :-)\n\n')
+   
+  }
 }

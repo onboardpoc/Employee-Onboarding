@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+
 import {
   MatAutocompleteModule,
   MatBadgeModule,
@@ -46,6 +47,7 @@ import {
 } from '@angular/material';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RouterModule, ROUTES} from '@angular/router';
 
 
 @NgModule({
@@ -94,7 +96,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MatTooltipModule,
     MatTreeModule,
     FormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
