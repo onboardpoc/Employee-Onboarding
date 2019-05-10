@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
-import { RestService } from '../rest.service';
-
-interface myData{
-  obj: Object
-}
+import { EmployeeService } from '../employee.service';
+import { Employee } from '../employee';
 
 
 @Component({
@@ -15,16 +12,35 @@ interface myData{
 })
 export class AddEmployeeComponent implements OnInit {
   env = environment;
-  rest=[]
-  constructor(private myFirstService: RestService) { }
+  selected = 'L1';
+   employeeData: Employee = new Employee();
+
+  constructor(private employeeService: EmployeeService) { }
 
   ngOnInit() {
-    this.myFirstService.getData().subscribe(data=>{
-      console.log("we got", data)
-    })
+
+    console.log(this.employeeService.testSerivice());
+
   }
   onSubmit() {
-    alert('SUCCESS!! :-)\n\n')
-   
+    // fill employee data object from form
+    this.employeeData.hmanager = 'Tripti';
+    this.employeeData.smanager = 'abc';
+    this.employeeData.firstName = 'singh';
+    this.employeeData.middleName = 'abc';
+    this.employeeData.lastName = 'dsds';
+    this.employeeData.dm = 'dsds';
+    this.employeeData.lob = 'dsds';
+    this.employeeData.onshore = 'dsds';
+    this.employeeData.location = 'dsds';
+    this.employeeData.role = 'dsds';
+    this.employeeData.expLevel = 'dsds';
+    this.employeeData.employeeId = 856164;
+    this.employeeData.notes = 'dsds';
+    this.employeeData.ssn = 1234;
+
+    // Call service to add employee data
+    this.employeeService.addEmployee(this.employeeData);
+    alert('SUCCESS!! :-)\n\n');
   }
 }
