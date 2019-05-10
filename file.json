@@ -1,0 +1,9 @@
+{
+"obj": [
+    {"fname":"tripti",
+    "online": true},
+
+    {"fname":"test",
+    "online": false}
+]
+}
