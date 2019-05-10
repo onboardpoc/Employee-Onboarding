@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { environment } from '../environments/environment';
-import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
+import { FormBuilder, FormGroup, Validators ,FormsModule,NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',

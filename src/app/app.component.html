@@ -6,8 +6,10 @@
         <mat-icon>menu</mat-icon>
       </button>
       <h1 class="onborading-app-name">Employee Onboarding</h1>
-  
-    <mat-form-field class="margin-left70" color='primary'>
+
+     
+    <div style="width:100%; direction:rtl;">
+    <mat-form-field  color='primary'>
       <mat-label>Select Theme</mat-label>
       <mat-select [(value)]="env.themeColor">
         <mat-option value="accent">Accent</mat-option>
@@ -15,6 +17,7 @@
         <mat-option value="warn">Red</mat-option>
       </mat-select>
     </mat-form-field>
+  </div>
 
   </mat-toolbar>
 
@@ -39,10 +42,12 @@
           <mat-nav-list>
             <!-- <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a> -->
             <a mat-list-item routerLinkActive="active-link" routerLink="dashboard">
-              <mat-icon color={{env.themeColor}}>home</mat-icon> <span class="menu-text">Dashboard</span>
+              <mat-icon color={{env.themeColor}}>home</mat-icon> 
+              <span class="menu-text {{env.themeColor}}">Dashboard</span>
             </a>
             <a mat-list-item routerLinkActive="active-link" routerLink="add-employee">
-              <mat-icon color={{env.themeColor}}>person_add</mat-icon> <span class="menu-text">Add Employee</span>
+              <mat-icon  color={{env.themeColor}}>person_add</mat-icon>
+              <span class="menu-text {{env.themeColor}}">Add Employee</span> 
             </a>
           </mat-nav-list>
         </mat-sidenav>
@@ -61,5 +66,6 @@
       </mat-sidenav-container>
 
     </mat-sidenav-content>
-  </mat-sidenav-container>
+   </mat-sidenav-container>
+
 </div>

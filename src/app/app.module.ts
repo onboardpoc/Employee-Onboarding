@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {
   MatAutocompleteModule,
@@ -22,6 +22,7 @@ import {
   MatDividerModule,
   MatExpansionModule,
   MatGridListModule,
+  MatFormFieldModule,
   MatIconModule,
   MatInputModule,
   MatListModule,
@@ -45,16 +46,22 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
+
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { RouterModule, ROUTES} from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { IncorrectUsernamePasswordSnackComponent} from './login/login.component';
+import { increaseElementDepthCount } from '@angular/core/src/render3/state';
+import {EmployeeService } from './employee.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     AddEmployeeComponent,
-    DashboardComponent
+    DashboardComponent,
+    LoginComponent,
+    IncorrectUsernamePasswordSnackComponent
   ],
   imports: [
     BrowserModule,
@@ -75,6 +82,7 @@ import { RouterModule, ROUTES} from '@angular/router';
     MatDividerModule,
     MatExpansionModule,
     MatGridListModule,
+    MatFormFieldModule,
     MatIconModule,
     MatInputModule,
     MatListModule,
@@ -98,8 +106,10 @@ import { RouterModule, ROUTES} from '@angular/router';
     MatTreeModule,
     FormsModule,
     FlexLayoutModule,
-  ],
-  providers: [],
+    ReactiveFormsModule
+      ],
+  entryComponents: [IncorrectUsernamePasswordSnackComponent],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
