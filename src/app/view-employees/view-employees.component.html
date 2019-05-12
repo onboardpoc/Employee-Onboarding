@@ -1,0 +1,65 @@
+<div class="add-employee-container">
+  <mat-toolbar class="breakWhenNeeded"> <span>View Employees</span></mat-toolbar>
+  <mat-card class="my-card">
+    <mat-card-content class="largetableContent">
+
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort matSortActive="lob" matSortDirection="asc" matSortDisableClear>
+
+            <!--- Note that these columns can be defined in any order.
+                  The actual rendered columns are set as a property on the row definition" -->
+          
+            <!-- Position Column -->
+            <!-- <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef> No. </th>
+              <td mat-cell *matCellDef="let element"> {{employees.}} </td>
+            </ng-container> -->
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="firstName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="lastName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="lob">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Line of Business</th>
+              <td mat-cell *matCellDef="let element"> {{element.lob}} </td>
+            </ng-container>
+
+             <!-- Symbol Column -->
+             <ng-container matColumnDef="employeeId">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Employee ID</th>
+                <td mat-cell *matCellDef="let element"> {{element.employeeId}} </td>
+              </ng-container>
+
+               <!-- Symbol Column -->
+             <ng-container matColumnDef="expLevel">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Exp. Level</th>
+                <td mat-cell *matCellDef="let element"> {{element.expLevel}} </td>
+              </ng-container>
+            
+              <ng-container matColumnDef="loading">
+                  <mat-footer-cell *matFooterCellDef colspan="6"> Loading Data.... </mat-footer-cell>
+              </ng-container>
+
+              <ng-container matColumnDef="noRecords">
+                  <mat-footer-cell *matFooterCellDef colspan="6"> no records.... </mat-footer-cell>
+              </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':dataSource!=null}"></mat-footer-row>
+            <mat-footer-row *matFooterRowDef="['noRecords']" [ngClass]="{'hide':!(dataSource!=null && dataSource.Data.length==0)}"></mat-footer-row>
+          </table>
+          
+    </mat-card-content>
+    
+  </mat-card>
+  <mat-paginator [pageSizeOptions]="[5,10,25,100]" [pageSize]="10" showFirstLastButtons></mat-paginator>
+</div>
