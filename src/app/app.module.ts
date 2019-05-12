@@ -53,6 +53,7 @@ import { LoginComponent } from './login/login.component';
 import { IncorrectUsernamePasswordSnackComponent} from './login/login.component';
 import { increaseElementDepthCount } from '@angular/core/src/render3/state';
 import {EmployeeService } from './employee.service';
+import { ViewEmployeesComponent } from './view-employees/view-employees.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import {EmployeeService } from './employee.service';
     AddEmployeeComponent,
     DashboardComponent,
     LoginComponent,
-    IncorrectUsernamePasswordSnackComponent
+    IncorrectUsernamePasswordSnackComponent,
+    ViewEmployeesComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +90,6 @@ import {EmployeeService } from './employee.service';
     MatListModule,
     MatMenuModule,
     MatNativeDateModule,
-    MatPaginatorModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
     MatRadioModule,
@@ -99,6 +100,7 @@ import {EmployeeService } from './employee.service';
     MatSlideToggleModule,
     MatSnackBarModule,
     MatSortModule,
+    MatPaginatorModule,
     MatTableModule,
     MatTabsModule,
     MatToolbarModule,
