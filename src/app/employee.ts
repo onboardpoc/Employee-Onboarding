@@ -16,4 +16,6 @@ export class Employee {
   notes: string;
   employeeId: number;
   ssn: number;
+  InitiateBGC: String;
+  SendSOW: String;
 }
